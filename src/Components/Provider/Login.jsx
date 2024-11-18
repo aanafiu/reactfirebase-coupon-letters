@@ -1,18 +1,63 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ImEye,ImEyeBlocked } from "react-icons/im";
 import loginimage from "../../assets/loginimg.jpeg"
+import { UserContext } from "./userProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const navigate = useNavigate();
+    const {loginUser} = useContext(UserContext)
     const [eyeBtn, setEyeBtn] = useState(false);
     const handleEye = ()=>{
         setEyeBtn(!eyeBtn);
     }
+        // Notification Error
+        const errorNotification = ()=>{
+            Swal.fire({
+              title: `Sorry!!`,
+              text: "Imformation Wrong",
+              icon: "error",
+              confirmButtonText: "Try Again",
+              allowOutsideClick: false,
+            }).then((result) => {
+              if (result.isConfirmed) {
+
+                navigate("/user/login");
+              }
+            });
+
+          
+    }
 
     // Login
-    const handleLogin =()=>{
-        console.log("hello")
+    const handleLogin =(e)=>{
+        e.preventDefault();
+        const email = e.target.email.value;
+        const password = e.target.password.value;
+
+        loginUser(email,password)
+        .then(()=>{
+            const Toast = Swal.mixin({
+                toast: true,
+                position: "top-end",
+                showConfirmButton: false,
+                timer: 2000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+                }
+              });
+              Toast.fire({
+                icon: "success",
+                title: "Signed in successfully"
+              });
+              navigate("/")
+        })
+        .catch(()=>{
+            errorNotification();
+        })
     }
     return (
         <div className=" flex p-4  gap-2 w-full min-h-[600px] h-[80vh] backdrop-blur-lg">

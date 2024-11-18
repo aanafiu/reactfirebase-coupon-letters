@@ -5,7 +5,7 @@ import Home from "../Components/Pages/Home";
 
 const Mainlayout = () => {
     return (
-        <div >
+        <div className="overflow-hidden" >
             <header className="bg-navBg text-navText sticky top-0 py-3"><Header></Header></header>
             <section className="bg-navBg py-4"><Latest></Latest></section>
 
