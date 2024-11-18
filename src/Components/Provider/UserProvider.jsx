@@ -52,7 +52,8 @@ const UserProvider = ({children}) => {
         updateDetails,
         loginUser,
         signOutUser,
-        loading
+        loading,
+        setLoading
     }
 
     return (

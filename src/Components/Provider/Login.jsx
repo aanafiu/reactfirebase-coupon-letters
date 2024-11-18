@@ -7,22 +7,24 @@ import Swal from "sweetalert2";
 
 const Login = () => {
     const navigate = useNavigate();
-    const {loginUser} = useContext(UserContext)
+    const {loginUser, setLoading, loading} = useContext(UserContext)
     const [eyeBtn, setEyeBtn] = useState(false);
     const handleEye = ()=>{
         setEyeBtn(!eyeBtn);
     }
         // Notification Error
+        console.log("B",loading)
         const errorNotification = ()=>{
+            
             Swal.fire({
               title: `Sorry!!`,
-              text: "Imformation Wrong",
+              text: "Information Wrong",
               icon: "error",
               confirmButtonText: "Try Again",
               allowOutsideClick: false,
             }).then((result) => {
               if (result.isConfirmed) {
-
+              
                 navigate("/user/login");
               }
             });
@@ -55,10 +57,14 @@ const Login = () => {
               });
               navigate("/")
         })
-        .catch(()=>{
+        .catch((error)=>{
+            setLoading(false); 
             errorNotification();
+
         })
+
     }
+    console.log("P",loading)
     return (
         <div className=" flex p-4  gap-2 w-full min-h-[600px] h-[80vh] backdrop-blur-lg">
                     

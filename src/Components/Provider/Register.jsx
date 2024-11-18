@@ -27,7 +27,7 @@ const Register = () => {
               allowOutsideClick: false,
             }).then((result) => {
               if (result.isConfirmed) {
-
+                setLoading(false)
                 navigate("/user/login");
               }
             });
@@ -62,7 +62,7 @@ const Register = () => {
       };
 
       
-    const { registerNewAccount, updateDetails } = useContext(UserContext);
+    const { registerNewAccount, updateDetails, setLoading } = useContext(UserContext);
 
 
     const handleRegister = (e)=>{
@@ -96,9 +96,11 @@ const Register = () => {
                         });
                     })
                     .catch(() => {        
+                      setLoading(false)
                         errorNotification();
                   })
                   .catch(() => {
+                    setLoading(false)
                     errorNotification();
                   });
             } 
@@ -115,7 +117,7 @@ const Register = () => {
 
 
     return (
-        <div className=" flex p-4  gap-2 w-full min-h-[600px] h-[80vh] backdrop-blur-lg">
+        <div className=" flex p-4  gap-2 w-full min-h-[650px] h-[80vh] backdrop-blur-lg">
                     
             <div className="card bg-base-100 w-[50%] shrink-0 shadow-2xl py-3">
                 <h1 className="text-center text-3xl font-bold pt-5">Register New Account</h1>
