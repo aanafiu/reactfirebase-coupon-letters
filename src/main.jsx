@@ -13,6 +13,7 @@ import UserLayout from './Layout/UserLayout';
 import Register from './Components/Provider/Register';
 import Login from './Components/Provider/Login';
 import UserProvider from './Components/Provider/userProvider';
+import PrivateRoutes from './Components/Provider/PrivateRoutes';
 
 const router = createBrowserRouter([
   {
@@ -24,8 +25,16 @@ const router = createBrowserRouter([
         element:<Home></Home>
       },
       {
+        path:"/home",
+        element:<Home></Home>
+      },
+      {
         path:"/brands",
         element:<div>this is brand</div>
+      },
+      {
+        path:"/my-profile",
+        element:<PrivateRoutes><div>this is profile</div></PrivateRoutes>
       }
     ]
   },

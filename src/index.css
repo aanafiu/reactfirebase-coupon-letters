@@ -3,7 +3,8 @@
 @tailwind utilities;
 
 .skeleton {
-
   animation: skeleton 3s ease-in-out infinite;
-  background-color: rgb(63, 119, 133);
+  background-color: rgba(255, 255, 255, 0.363);
+  border-radius: 0;
+  margin: 0;
 }

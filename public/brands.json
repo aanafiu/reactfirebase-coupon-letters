@@ -1,0 +1,211 @@
+[
+    {
+      "_id": "1",
+      "brand_name": "TechMart",
+      "description": "The ultimate destination for tech enthusiasts.",
+      "brand_logo": "https://i.ibb.co.com/KsWWnC5/d1f576f1-cf23-448a-9c6d-bf345cbb2add.jpg",
+      "shop_Link": "https://techmart.com",
+      "category": "Electronics",
+      "rating": 4.8,
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "TECH20",
+          "description": "Get 20% off on all electronics.",
+          "expiry_date": "2024-12-31",
+          "condition": "Minimum purchase $100",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "FREESHIP",
+          "description": "Free shipping on orders above $50.",
+          "expiry_date": "2025-01-15",
+          "condition": "No minimum spend",
+          "coupon_type": "Free Shipping"
+        }
+      ]
+    },
+    {
+      "_id": "2",
+      "brand_name": "StyleHub",
+      "description": "Trendy fashion for every season.",
+      "brand_logo": "https://i.ibb.co.com/KsWWnC5/d1f576f1-cf23-448a-9c6d-bf345cbb2add.jpg",
+      "shop_Link": "https://stylehub.com",
+      "category": "Fashion",
+      "rating": 4.2,
+      "isSaleOn": false,
+      "coupons": [
+        {
+          "coupon_code": "STYLE15",
+          "description": "Save 15% on your first purchase.",
+          "expiry_date": "2024-12-10",
+          "condition": "For new customers only",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "BOGO",
+          "description": "Buy one get one free on select items.",
+          "expiry_date": "2025-02-28",
+          "condition": "Applicable on selected categories",
+          "coupon_type": "BOGO"
+        }
+      ]
+    },
+    {
+      "_id": "3",
+      "brand_name": "BookNest",
+      "description": "A haven for book lovers.",
+      "brand_logo": "https://i.ibb.co.com/KsWWnC5/d1f576f1-cf23-448a-9c6d-bf345cbb2add.jpg",
+      "shop_Link": "https://booknest.com",
+      "category": "Books",
+      "rating": 4.5,
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "READ10",
+          "description": "10% off on all books.",
+          "expiry_date": "2024-11-30",
+          "condition": "No minimum spend",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "GIFT25",
+          "description": "Get $25 off on purchases over $100.",
+          "expiry_date": "2024-12-25",
+          "condition": "Minimum spend $100",
+          "coupon_type": "Flat Discount"
+        }
+      ]
+    },
+    {
+      "_id": "4",
+      "brand_name": "HomeHaven",
+      "description": "Your partner in home improvement.",
+      "brand_logo": "https://i.ibb.co.com/KsWWnC5/d1f576f1-cf23-448a-9c6d-bf345cbb2add.jpg",
+      "shop_Link": "https://homehaven.com",
+      "category": "Home Decor",
+      "rating": 4.6,
+      "isSaleOn": false,
+      "coupons": [
+        {
+          "coupon_code": "HOME15",
+          "description": "15% off on all home decor items.",
+          "expiry_date": "2025-03-01",
+          "condition": "No minimum spend",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "DELUXE20",
+          "description": "20% off on deluxe furniture collection.",
+          "expiry_date": "2024-12-20",
+          "condition": "Applicable on select categories",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "5",
+      "brand_name": "FitnessPro",
+      "description": "Premium fitness gear and supplements.",
+      "brand_logo": "https://i.ibb.co.com/KsWWnC5/d1f576f1-cf23-448a-9c6d-bf345cbb2add.jpg",
+      "shop_Link": "https://fitnesspro.com",
+      "category": "Fitness",
+      "rating": 4.7,
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "FIT10",
+          "description": "10% off on gym equipment.",
+          "expiry_date": "2025-01-01",
+          "condition": "No minimum spend",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "SUPPS25",
+          "description": "25% off on supplements.",
+          "expiry_date": "2025-03-01",
+          "condition": "Minimum spend $50",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "6",
+      "brand_name": "GadgetWorld",
+      "description": "Latest gadgets at unbeatable prices.",
+      "brand_logo": "https://i.ibb.co.com/KsWWnC5/d1f576f1-cf23-448a-9c6d-bf345cbb2add.jpg",
+      "shop_Link": "https://gadgetworld.com",
+      "category": "Gadgets",
+      "rating": 4.3,
+      "isSaleOn": false,
+      "coupons": [
+        {
+          "coupon_code": "GADGET50",
+          "description": "Flat $50 off on all smartphones.",
+          "expiry_date": "2025-02-15",
+          "condition": "Minimum spend $500",
+          "coupon_type": "Flat Discount"
+        },
+        {
+          "coupon_code": "SMART10",
+          "description": "10% off on smartwatches.",
+          "expiry_date": "2025-03-31",
+          "condition": "No minimum spend",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "7",
+      "brand_name": "BeautyBliss",
+      "description": "Luxurious beauty products for everyone.",
+      "brand_logo": "https://i.ibb.co.com/9pFrhHy/Gemini-Generated-Image-1r2b1t1r2b1t1r2b.jpg",
+      "shop_Link": "https://beautybliss.com",
+      "category": "Beauty",
+      "rating": 4.5,
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "BLISS20",
+          "description": "20% off on skincare products.",
+          "expiry_date": "2024-12-15",
+          "condition": "No minimum spend",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "MAKEUP30",
+          "description": "30% off on all makeup items.",
+          "expiry_date": "2025-02-01",
+          "condition": "Minimum spend $100",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "8",
+      "brand_name": "GameZone",
+      "description": "The ultimate gaming store.",
+      "brand_logo": "https://i.ibb.co.com/9pFrhHy/Gemini-Generated-Image-1r2b1t1r2b1t1r2b.jpg",
+      "shop_Link": "https://gamezone.com",
+      "category": "Gaming",
+      "rating": 4.8,
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "GAME50",
+          "description": "50% off on all gaming accessories.",
+          "expiry_date": "2025-01-01",
+          "condition": "Minimum spend $200",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "PREORDER10",
+          "description": "10% off on game pre-orders.",
+          "expiry_date": "2025-03-31",
+          "condition": "No minimum spend",
+          "coupon_type": "Percentage"
+        }
+      ]
+    }
+  ]
+  

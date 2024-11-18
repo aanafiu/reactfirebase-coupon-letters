@@ -1,13 +1,15 @@
 import { Outlet } from "react-router-dom";
 import Header from "../Components/Header/Header";
 import Latest from "../Components/Latest/Latest";
-import Home from "../Components/Pages/Home";
+
+import Banner from "../Components/Header/Banner";
 
 const Mainlayout = () => {
     return (
-        <div className="overflow-hidden" >
-            <header className="bg-navBg text-navText sticky top-0 py-3"><Header></Header></header>
-            <section className="bg-navBg py-4"><Latest></Latest></section>
+        <div className="overflow-hidden relative bg-navBg" >
+            <header className=" text-navText sticky z-10 top-0 py-3"><Header></Header></header>
+            <Banner></Banner>
+            <section className="my-7"><Latest></Latest></section>
 
             <main><Outlet></Outlet></main>
         </div>
