@@ -4,6 +4,7 @@ import { ImEye,ImEyeBlocked } from "react-icons/im";
 import regImage from "../../assets/regimage2.webp"
 import { UserContext } from "./userProvider";
 import Swal from 'sweetalert2'
+import Loading from "./Loading";
 
 
 
@@ -61,7 +62,7 @@ const Register = () => {
       };
 
       
-    const {registerNewAccount, updateDetails } = useContext(UserContext);
+    const { registerNewAccount, updateDetails } = useContext(UserContext);
 
 
     const handleRegister = (e)=>{
@@ -71,20 +72,20 @@ const Register = () => {
         const email = e.target.email.value;
         const password = e.target.password.value;
 
-        console.log(name, photo, email, password);
+        // console.log(name, photo, email, password
 
         if(passwordValid)
             {
                 registerNewAccount(email,password)
-                .then(() => {
-                    // Signed up 
+                .then((result) => {
                     updateDetails(name, photo)
-                    .then(()=>{
-                        Swal.fire({
+                    .then((currentUser)=>{
+                      
+                      Swal.fire({
                             title: `Welcome ${name}`,
                             text: "You Have Successfully Created An Account ",
                             icon: "success",
-                            confirmButtonText: "Go to Login",
+                            confirmButtonText: "Go to Home ",
                             allowOutsideClick: false, 
                           }).then((result) => {
                             if (result.isConfirmed) {
@@ -110,7 +111,6 @@ const Register = () => {
                     allowOutsideClick: false, 
                 })
             }
-
     }
 
 

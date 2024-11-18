@@ -4,13 +4,13 @@ import { useContext } from "react";
 import { UserContext } from "../Provider/userProvider";
 const Header = () => {
     const {user, signOutUser} = useContext(UserContext);
-    console.log("Header" , user)
+    const name = user?.displayName.split(" ")[0];
     return (
         <div className=" flex justify-between items-center w-[90%] mx-auto whitespace-nowrap">
             <Link to="/" className="object-fill whitespace-nowrap"><img src={logo} alt="" className=" h-[80px] w-fit" /></Link>
             <div className="flex gap-4 font-semibold whitespace-nowrap">
                 { user &&
-                <Link to="/myprofile" className=" p-2 text-clip">Welcome,<span className="text-purple-600 text-lg font-bold">{user?.displayName.split(" ")[0]}</span></Link>
+                <Link to="/myprofile" className=" p-2 text-clip">Welcome,<span className="text-purple-600 text-lg font-bold">{name}</span></Link>
                 }
                 <Link to="/home" className="hover:bg-purple-600 p-2">Home</Link>
                 <Link to="/brands" className="hover:bg-purple-600 p-2">Brands</Link>

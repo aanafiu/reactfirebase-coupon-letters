@@ -1,7 +1,19 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet } from "react-router-dom";
 import Header from "../Components/Header/Header";
+import { useContext } from "react";
+import { UserContext } from "../Components/Provider/userProvider";
+import Loading from "../Components/Provider/Loading";
 
 const UserLayout = () => {
+    const {user, loading} =  useContext(UserContext);
+    if(loading)
+    {
+        return <Loading/>
+    }
+    if(user)
+    {
+        return <Navigate to={"/"}></Navigate>
+    }
     return (
         <div className="w-full relative overflow-hidden">
             <header className="bg-navBg text-navText sticky top-0 py-3 z-10"><Header></Header></header>
