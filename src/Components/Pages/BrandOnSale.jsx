@@ -4,7 +4,7 @@ import TrueCoupon from './TrueCoupon';
 
 const BrandOnSale = () => {
     const data = useLoaderData();
-    console.log(data.length)
+    console.log("i am brand on sale")
     return (
         <div className='w-[80%] mx-auto my-10'>
             <h1 className='text-center text-4xl text-white font-bold my-5'>Brand On Sale</h1>

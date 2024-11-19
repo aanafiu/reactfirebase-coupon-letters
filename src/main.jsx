@@ -14,37 +14,53 @@ import Login from './Components/Provider/Login';
 import UserProvider from './Components/Provider/userProvider';
 import PrivateRoutes from './Components/Provider/PrivateRoutes';
 import BrandOnSale from './Components/Pages/BrandOnSale';
+import Brands from './Components/Brands/Brands';
+import Home from './Components/Home/Home';
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Mainlayout></Mainlayout>,
+    path:"",
+    element:<Mainlayout></Mainlayout>,
     children:[
       {
-        path:"/",
-        element:<BrandOnSale></BrandOnSale>,
-        loader: ()=>(fetch("./brands.json"))
-      },
+        path:"",
+        element:<Home></Home>,
+        children:[
+          {
+            path:"",
+            element:<BrandOnSale></BrandOnSale>,
+            loader:()=>fetch("./brands.json")
+          },
+          
+        ]
+     },
       {
-        path:"brands",
-        element:<div>this is brand</div>
+        path:"/brands",
+        element:<Brands></Brands>,
+        loader:()=>fetch("./brands.json")
+    
       },
+     
     ]
+
   },
   {
     path:"/home",
     element:<Mainlayout></Mainlayout>,
     children:[
       {
-        path:"/home/",
-        element:<BrandOnSale></BrandOnSale>,
-        loader: ()=>(fetch("./brands.json"))
-      },
-      {
-        path:"home/brands",
-        element:<div>this is brand</div>
-      },
+        path:"/home",
+        element:<Home></Home>,
+        children:[
+          {
+            path:"/home/",
+            element:<BrandOnSale></BrandOnSale>,
+            loader:()=>fetch("./brands.json")
+          }
+        ]
+     },
     ]
+
   },
   {
     path:"/my-profile",
