@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ImEye,ImEyeBlocked } from "react-icons/im";
-import regImage from "../../assets/regimage2.webp"
+import regImage from "../../assets/regimage2.jpeg"
 import { UserContext } from "./userProvider";
 import Swal from 'sweetalert2'
 
@@ -117,41 +117,41 @@ const Register = () => {
     return (
         <div className=" flex p-4  gap-2 w-full min-h-[650px] h-[80vh] backdrop-blur-lg">
                     
-            <div className="card bg-base-100 w-[50%] shrink-0 shadow-2xl py-3">
+            <div className="bg-black card w-[50%] shrink-0 shadow-2xl py-3">
                 <h1 className="text-center text-3xl font-bold pt-5">Register New Account</h1>
                 <form onSubmit={handleRegister} className="card-body p-3 gap-2 justify-between h-full">
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Full Name</span>
+                        <span className="label-text  text-navText">Full Name</span>
                     </label>
-                    <input type="text" placeholder="Full Name" name="name" className="input input-bordered" required />
+                    <input type="text" placeholder="Full Name" name="name" className="bg-navBg text-navText font-semibold input input-bordered" required />
                     </div>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Photo URL</span>
+                        <span className="label-text  text-navText">Photo URL</span>
                     </label>
-                    <input type="text" placeholder="Photo URL" name="photo" className="input input-bordered" required />
+                    <input type="text" placeholder="Photo URL" name="photo" className="bg-navBg text-navText font-semibold input input-bordered" required />
                     </div>
                     <div className="form-control">
                     <label className="label">
-                        <span className="label-text">Email</span>
+                        <span className="label-text  text-navText">Email</span>
                     </label>
-                    <input type="email" placeholder="email" name="email" className="input input-bordered" required />
+                    <input type="email" placeholder="Email" name="email" className="bg-navBg text-navText font-semibold input input-bordered" required />
                     </div>
                     <div className="form-control">
 
                         <div className="flex justify-between items-center">
                             <label className="label">
-                                    <span className="label-text">Password</span>
+                                    <span className="label-text text-navText">Password</span>
                             </label>
-                            <div>
+                            <div className="text-navText text-lg">
                                         <button  type="button" onClick={handleEye}>
                                             {!eyeBtn ? <ImEyeBlocked /> :<ImEye /> }
                                     </button>
                             </div>
                         </div>
 
-                    <input type={eyeBtn ?"text" : "password"} placeholder="password" name="password" className="input input-bordered" required onKeyUp={handlePasswordChange}/>
+                    <input type={eyeBtn ?"text" : "password"} placeholder="Password" name="password" className="bg-navBg text-navText font-semibold input input-bordered" required onKeyUp={handlePasswordChange}/>
                     </div>
                     <div>
                             <p 
@@ -160,9 +160,9 @@ const Register = () => {
                             </p>
                     </div>
                     <div className="form-control mt-2">
-                    <button className="btn btn-primary">Register</button>
+                    <button className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500">Register</button>
                     </div>
-                    <p className="text-center mt-2">Already Have An Account. <Link to="/user/login" className="font-bold text-navBg">Login</Link></p>
+                    <p className="text-center mt-2">Already Have An Account. <Link to="/user/login" className="font-bold text-purple-500">Login</Link></p>
                 </form>
             </div>
 

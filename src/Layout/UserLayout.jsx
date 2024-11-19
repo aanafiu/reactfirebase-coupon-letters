@@ -3,6 +3,7 @@ import Header from "../Components/Header/Header";
 import { useContext } from "react";
 import { UserContext } from "../Components/Provider/userProvider";
 import Loading from "../Components/Provider/Loading";
+import Footer from "../Components/Footer/Footer";
 
 const UserLayout = () => {
     const {user, loading} =  useContext(UserContext);
@@ -15,11 +16,11 @@ const UserLayout = () => {
         return <Navigate to={"/"}></Navigate>
     }
     return (
-        <div className="w-full relative overflow-hidden">
-            <header className="bg-navBg text-navText sticky top-0 py-3 z-10"><Header></Header></header>
+        <div className="bg-black w-full relative">
+            <header className="backdrop-blur-xl text-navText sticky top-0 py-3 z-10"><Header></Header></header>
 
-            <section className="w-[90%] bg-fuchsia-500 rounded-[100px] mx-auto flex justify-center items-center my-3"><Outlet></Outlet></section>
-
+            <section className="w-[90%] bg-navText rounded-[80px] mx-auto flex justify-center items-center my-3"><Outlet></Outlet></section>
+            <Footer></Footer>
             
         </div>
     );

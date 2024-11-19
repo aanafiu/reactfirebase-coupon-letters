@@ -6,6 +6,7 @@ import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
+  useParams,
 } from "react-router-dom";
 import Mainlayout from './Layout/Mainlayout';
 import UserLayout from './Layout/UserLayout';
@@ -16,6 +17,9 @@ import PrivateRoutes from './Components/Provider/PrivateRoutes';
 import BrandOnSale from './Components/Pages/BrandOnSale';
 import Brands from './Components/Brands/Brands';
 import Home from './Components/Home/Home';
+import BrandDetails from './Components/Brands/BrandDetails';
+import { Toaster } from 'react-hot-toast';
+
 
 const router = createBrowserRouter([
   {
@@ -29,17 +33,19 @@ const router = createBrowserRouter([
           {
             path:"",
             element:<BrandOnSale></BrandOnSale>,
-            loader:()=>fetch("./brands.json")
+            loader:()=>fetch("../brands.json")
           },
-          
         ]
      },
       {
         path:"/brands",
         element:<Brands></Brands>,
-        loader:()=>fetch("./brands.json")
-    
       },
+      {
+        path:"brands/:id",
+        element:<PrivateRoutes><BrandDetails></BrandDetails></PrivateRoutes> ,
+        loader:()=>fetch("../brands.json")
+      }
      
     ]
 
@@ -55,10 +61,15 @@ const router = createBrowserRouter([
           {
             path:"/home/",
             element:<BrandOnSale></BrandOnSale>,
-            loader:()=>fetch("./brands.json")
+            loader:()=>fetch("../brands.json")
           }
         ]
      },
+     {
+      path:"brands/:id",
+      element:<PrivateRoutes><BrandDetails></BrandDetails></PrivateRoutes> ,
+      loader:()=>fetch("../brands.json")
+    },
     ]
 
   },
@@ -90,6 +101,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <UserProvider>
         <RouterProvider router={router} />
+        <Toaster/>
     </UserProvider>
   </React.StrictMode>
 );

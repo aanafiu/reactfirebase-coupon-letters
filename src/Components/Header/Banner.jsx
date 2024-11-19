@@ -1,46 +1,65 @@
+import { useEffect, useRef } from 'react';
+import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules';
+// Import Swiper styles
+import 'swiper/css';
+import 'swiper/css/navigation';
+import 'swiper/css/pagination';
 
 import image1 from "../../assets/banner.png";
-import image2 from "../../assets/regimage2.webp";
-import image3 from "../../assets/regimage.jpeg";
-
-import Carousel from 'react-multi-carousel';
-import 'react-multi-carousel/lib/styles.css';
+import image2 from "../../assets/banner2.png";
+import image3 from "../../assets/banner1.png";
+import image4 from "../../assets/banner3.png";
 
 const Banner = () => {
-    const responsive = {
-        superLargeDesktop: {
-          // the naming can be any, depends on you.
-          breakpoint: { max: 4000, min: 3000 },
-          items: 5
+  const swiperRef = useRef(null); // Create a ref for the Swiper container
+
+  useEffect(() => {
+    if (swiperRef.current) {
+      // Initialize Swiper
+      new Swiper(swiperRef.current, {
+        modules: [Navigation, Pagination],
+        direction: 'horizontal', // Change to 'vertical' if needed
+        loop: true,
+        pagination: {
+          el: '.swiper-pagination',
+          clickable: true,
         },
-        desktop: {
-          breakpoint: { max: 3000, min: 1024 },
-          items: 3
+        navigation: {
+          nextEl: '.swiper-button-next',
+          prevEl: '.swiper-button-prev',
         },
-        tablet: {
-          breakpoint: { max: 1024, min: 464 },
-          items: 2
-        },
-        mobile: {
-          breakpoint: { max: 464, min: 0 },
-          items: 1
-        }
-      };
+      });
+    }
+  }, []);
+
   return (
-    <div className="h-[100%]">
-        <Carousel responsive={responsive}>
-            <div className="h-[100%] w-[100%]"><img src={image2} className="h-[100%] w-[100%]" alt=""  /></div>
-            <div className="h-[100%] w-[100%]"><img src={image1} className="h-[100%] w-[100%]" alt=""  /></div>
-            <div className="h-[100%] w-[100%]"><img src={image3} className="h-[100%] w-[100%]" alt=""  /></div>
-            <div className="h-[100%] w-[100%]"><img src={image1} className="h-[100%] w-[100%]" alt=""  /></div>
-            <div className="h-[100%] w-[100%]"><img src={image2} className="h-[100%] w-[100%]" alt=""  /></div>
-            <div className="h-[100%] w-[100%]"><img src={image3} className="h-[100%] w-[100%]" alt=""  /></div>
+    <div className='w-full my-5'>
+      <div className="swiper w-full" ref={swiperRef}>
+        <div className="swiper-wrapper w-full">
+          <div className="swiper-slide w-full">
+            <img src={image1} alt="Banner 1" />
+          </div>
+          <div className="swiper-slide w-full">
+            <img src={image2} alt="Banner 2" />
+          </div>
+          <div className="swiper-slide w-full">
+            <img src={image3} alt="Banner 3" />
+          </div>
+          <div className="swiper-slide w-full">
+            <img src={image4} alt="Banner 4" />
+          </div>
+        </div>
 
+        {/* Pagination */}
+        <div className="swiper-pagination w-full"></div>
 
-        </Carousel>
+        {/* Navigation */}
+        <div className="swiper-button-prev w-full"></div>
+        <div className="swiper-button-next w-full"></div>
+      </div>
     </div>
 
-    
   );
 };
 

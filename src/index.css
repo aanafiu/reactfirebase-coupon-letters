@@ -6,5 +6,53 @@
   animation: skeleton 3s ease-in-out infinite;
   background-color: rgba(255, 255, 255, 0.363);
   border-radius: 0;
-  margin: 0;
+  margin: 40px 0;
+}
+
+.animated-element {
+  animation: bounce-in 1s ease-out;
+}
+
+@keyframes bounce-in {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+.swiper {
+  width: 100%;
+  height:100%;
+}
+
+.swiper-wrapper {
+  display: flex;
+  width: 100%;
+  height:100%;
+
+}
+
+.swiper-slide {
+  width: 100%; 
+  height: 100%;
+  display: flex; 
+  justify-content: center;
+  align-items: center;
+}
+.swiper-slide img {
+  width: 100%;
+  height:100%;
+  object-fit: cover; 
+}
+
+h1,p{
+  color: #C69749;
 }

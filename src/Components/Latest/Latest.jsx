@@ -1,6 +1,6 @@
 import { useEffect, useState } from "react";
 import Marquee from "react-fast-marquee";
-import { Link, useParams } from "react-router-dom";
+import { Link} from "react-router-dom";
 
 const Latest = () => {
     const [brands, setBrands] = useState([]);
@@ -10,10 +10,10 @@ const Latest = () => {
             .then((data) => setBrands(data));
     }, []);
     return (
-        <div className="skeleton bg-navBg flex rounded-lg p-4 text-xl font-semibold text-white">
+        <div className="skeleton bg-[#735F32] flex rounded-lg p-6  text-xl font-semibold">
             <Marquee  speed={150} pauseOnHover={true}>
                 {brands.map((e) => (
-                    <Link to={`brands/${e._id}`} key={e._id} className="flex flex-col justify-center items-center" >
+                    <Link to={`brands/${e._id}`} key={e._id} className="flex flex-col justify-center items-center " >
                         <img src={e.brand_logo} alt="" className="mx-8 w-[120px] h-[100px]" />
                         <h1>{e.brand_name}</h1>
                     </Link>
