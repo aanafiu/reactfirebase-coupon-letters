@@ -8,12 +8,12 @@ import {
   RouterProvider,
 } from "react-router-dom";
 import Mainlayout from './Layout/Mainlayout';
-import Home from './Components/Pages/Home';
 import UserLayout from './Layout/UserLayout';
 import Register from './Components/Provider/Register';
 import Login from './Components/Provider/Login';
 import UserProvider from './Components/Provider/userProvider';
 import PrivateRoutes from './Components/Provider/PrivateRoutes';
+import BrandOnSale from './Components/Pages/BrandOnSale';
 
 const router = createBrowserRouter([
   {
@@ -22,21 +22,33 @@ const router = createBrowserRouter([
     children:[
       {
         path:"/",
-        element:<Home></Home>
+        element:<BrandOnSale></BrandOnSale>,
+        loader: ()=>(fetch("./brands.json"))
       },
       {
-        path:"/home",
-        element:<Home></Home>
-      },
-      {
-        path:"/brands",
+        path:"brands",
         element:<div>this is brand</div>
       },
-      {
-        path:"/my-profile",
-        element:<PrivateRoutes><div>this is profile</div></PrivateRoutes>
-      }
     ]
+  },
+  {
+    path:"/home",
+    element:<Mainlayout></Mainlayout>,
+    children:[
+      {
+        path:"/home/",
+        element:<BrandOnSale></BrandOnSale>,
+        loader: ()=>(fetch("./brands.json"))
+      },
+      {
+        path:"home/brands",
+        element:<div>this is brand</div>
+      },
+    ]
+  },
+  {
+    path:"/my-profile",
+    element:<PrivateRoutes><div>this is profile</div></PrivateRoutes>
   },
   {
     path:"/user",

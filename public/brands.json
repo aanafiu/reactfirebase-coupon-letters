@@ -206,6 +206,51 @@
           "coupon_type": "Percentage"
         }
       ]
+    },
+    {
+      "_id": "9",
+      "brand_name": "Fashion Central",
+      "description": "Your one-stop shop for all things fashion.",
+      "brand_logo": "https://i.ibb.co.com/9pFrhHy/Gemini-Generated-Image-1r2b1t1r2b1t1r2b.jpg", 
+       "shop_Link": "https://fashioncentral.com",
+      "category": "Fashion",
+      "rating": 4.6,
+      "isSaleOn": true,
+      "coupons": [
+        {
+          "coupon_code": "FALL30",
+          "description": "Enjoy 30% off on fall collections.",
+          "expiry_date": "2024-11-30",
+          "condition": "Minimum purchase $50",
+          "coupon_type": "Percentage"
+        },
+        {
+          "coupon_code": "WELCOME10",
+          "description": "Get 10% off on your first order.",
+          "expiry_date": "2025-01-31",
+          "condition": "New customers only",
+          "coupon_type": "Percentage"
+        }
+      ]
+    },
+    {
+      "_id": "10",
+      "brand_name": "Homeware Haven",
+      "description": "Curating comfort for your living space.",
+      "brand_logo": "https://i.ibb.co.com/9pFrhHy/Gemini-Generated-Image-1r2b1t1r2b1t1r2b.jpg",  
+      "shop_Link": "https://homewarehaven.com",
+      "category": "Home & Living",
+      "rating": 4.9,
+      "isSaleOn": false,
+      "coupons": [
+        {
+          "coupon_code": "HOLIDAY20",
+          "description": "Get 20% off on all holiday decorations.",
+          "expiry_date": "2024-12-25",
+          "condition": "Minimum purchase $75",
+          "coupon_type": "Percentage"
+        }
+      ]
     }
   ]
   

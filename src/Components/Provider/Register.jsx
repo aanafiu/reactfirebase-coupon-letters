@@ -4,8 +4,6 @@ import { ImEye,ImEyeBlocked } from "react-icons/im";
 import regImage from "../../assets/regimage2.webp"
 import { UserContext } from "./userProvider";
 import Swal from 'sweetalert2'
-import Loading from "./Loading";
-
 
 
 const Register = () => {
@@ -77,9 +75,9 @@ const Register = () => {
         if(passwordValid)
             {
                 registerNewAccount(email,password)
-                .then((result) => {
+                .then(() => {
                     updateDetails(name, photo)
-                    .then((currentUser)=>{
+                    .then(()=>{
                       
                       Swal.fire({
                             title: `Welcome ${name}`,

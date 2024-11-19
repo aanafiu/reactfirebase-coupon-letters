@@ -1,8 +1,9 @@
-import { Outlet } from "react-router-dom";
+
 import Header from "../Components/Header/Header";
 import Latest from "../Components/Latest/Latest";
 
 import Banner from "../Components/Header/Banner";
+import { Outlet } from "react-router-dom";
 
 const Mainlayout = () => {
     return (
@@ -10,8 +11,7 @@ const Mainlayout = () => {
             <header className=" text-navText sticky z-10 top-0 py-3"><Header></Header></header>
             <Banner></Banner>
             <section className="my-7"><Latest></Latest></section>
-
-            <main><Outlet></Outlet></main>
+            <Outlet></Outlet>
         </div>
     );
 };

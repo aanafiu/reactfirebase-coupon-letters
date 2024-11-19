@@ -29,12 +29,12 @@ const Banner = () => {
   return (
     <div className="h-[100%]">
         <Carousel responsive={responsive}>
-            <div className="h-[100%] w-[100%]"><img src={image1} className="h-[100%] w-[100%]" alt="" srcset="" /></div>
-            <div className="h-[100%] w-[100%]"><img src={image2} className="h-[100%] w-[100%]" alt="" srcset="" /></div>
-            <div className="h-[100%] w-[100%]"><img src={image3} className="h-[100%] w-[100%]" alt="" srcset="" /></div>
-            <div className="h-[100%] w-[100%]"><img src={image1} className="h-[100%] w-[100%]" alt="" srcset="" /></div>
-            <div className="h-[100%] w-[100%]"><img src={image2} className="h-[100%] w-[100%]" alt="" srcset="" /></div>
-            <div className="h-[100%] w-[100%]"><img src={image3} className="h-[100%] w-[100%]" alt="" srcset="" /></div>
+            <div className="h-[100%] w-[100%]"><img src={image2} className="h-[100%] w-[100%]" alt=""  /></div>
+            <div className="h-[100%] w-[100%]"><img src={image1} className="h-[100%] w-[100%]" alt=""  /></div>
+            <div className="h-[100%] w-[100%]"><img src={image3} className="h-[100%] w-[100%]" alt=""  /></div>
+            <div className="h-[100%] w-[100%]"><img src={image1} className="h-[100%] w-[100%]" alt=""  /></div>
+            <div className="h-[100%] w-[100%]"><img src={image2} className="h-[100%] w-[100%]" alt=""  /></div>
+            <div className="h-[100%] w-[100%]"><img src={image3} className="h-[100%] w-[100%]" alt=""  /></div>
 
 
         </Carousel>
