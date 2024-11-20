@@ -40,13 +40,13 @@ const BrandDetails = () => {
   })
 };
   return (
-    <div className="p-5 w-[80%] mx-auto my-5 bg-blue-200 rounded-lg">
-                <h1 className="text-5xl font-bold text-center text-white my-4">{brand.brand_name}</h1>
+    <div className="p-5 w-[80%] mx-auto my-5 bg-navText rounded-lg">
+                <h1 className="text-5xl font-bold text-center text-navBg my-4">{brand.brand_name}</h1>
         <div className="flex gap-5 justify-between items-center">
             <img src={brand.brand_logo} alt={brand.brand_name} className="w-full h-fit mx-auto rounded-xl" />
             <div className="w-full flex flex-col items-start">
                     <div className="w-full flex items-center justify-between">
-                        <h1 className="text-xl font-bold">Rating</h1>
+                        <h1 className="text-xl font-bold text-navBg">Rating</h1>
                         {brand.rating !== undefined && (
                                                         <ReactStars
                                                             count={5}
@@ -54,13 +54,13 @@ const BrandDetails = () => {
                                                             size={30}
                                                             isHalf={true}
                                                             edit={false}
-                                                            color="#003171"
-                                                            activeColor="#19B5FE"
+                                                            color="#C69749"
+                                                            activeColor="#282A3A"
                                                         />
                                                     )}
                     </div>
-                    <p className="text-gray-600 text-center text-xl"><span className="font-bold">Description: </span>{brand.description}</p>
-                    <p className="text-gray-600 text-center text-lg"><span className="font-bold">Category: </span> {brand.category}</p>
+                    <p className="text-gray-600 text-xl"><span className="font-bold text-blue-50">Description: </span>{brand.description}</p>
+                    <p className="text-gray-600 text-center text-lg"><span className="font-bold text-blue-50">Category: </span> {brand.category}</p>
 
                     {/* grid coupon */}
                     <div className="w-full grid grid-cols-1 gap-4">
@@ -72,7 +72,7 @@ const BrandDetails = () => {
                                <h1 className="text-lg font-semibold">{e.description}</h1>
                                <h1 className="text-lg font-semibold">Expire Date: {e.expiry_date}</h1>
                                <CopyToClipboard onCopy={notify} text={e.coupon_code} >
-                                    <button  type="button" className="bg-blue-500 text-white py-2 px-4 rounded">
+                                    <button  type="button" className="bg-navText text-white font-bold text-lg py-2 px-4 rounded">
                                     Copy to Clipboard
                                     </button>
 

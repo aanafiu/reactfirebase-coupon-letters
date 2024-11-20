@@ -34,7 +34,7 @@ const Brands = () => {
       const div = document.createElement("div");
       div.innerHTML = `
       <div class="rounded-full bg-red-500 h-[10px] w-[10px]"></div>
-      <h1 class=" text-gray-500 font-bold text-xl  animate__animated animate__bounceIn transition-all">Sale Is On</h1>
+      <h1 class=" text-purple-500 font-bold text-xl  animate__animated animate__bounceIn transition-all">Sale Is On</h1>
       `;
       div.classList = "flex gap-2 items-center justify-center";
      
@@ -48,7 +48,7 @@ const Brands = () => {
         const id = document.getElementById(brand._id);
         const div = document.createElement("div");
         div.innerHTML = `
-        <div class="rounded-full bg-gray-500 h-[10px] w-[10px]"></div>
+        <div class="rounded-full bg-purple-500 h-[10px] w-[10px]"></div>
         <h1 class=" text-red-500 font-bold text-xl  animate__animated animate__bounceIn transition-all">No Sale Is On</h1>
         `;
        
@@ -59,14 +59,14 @@ const Brands = () => {
     }
   };
   return (
-    <div className="bg-white w-[90%] mx-auto p-5">
-      <div className="flex justify-between items-center mb-4">
-        <h1 className="text-2xl font-bold">Brands</h1>
+    <div className=" backdrop-blur-md w-[90%] mx-auto p-5">
+      <div className=" flex justify-between items-center mb-4 z-10">
+        <h1 className="text-4xl font-bold">Brands</h1>
         <div>
-          <label className="input input-bordered flex items-center gap-2">
+          <label className="input input-bordered flex items-center gap-2 bg-navText text-black font-semibold">
             <input
               type="text"
-              className="grow"
+              className="grow placeholder-black "
               placeholder="Search"
               value={search}
               onChange={(e) => setSearch(e.target.value)} // Update search state
@@ -87,17 +87,17 @@ const Brands = () => {
         </div>
       </div>
 
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
             filteredBrands.map((brand) => (
-                <Link to={brand._id} key={brand._id} className="p-4 border rounded-md shadow-md">
+                <Link to={brand._id} key={brand._id} className="brand h-full bg-navBg backdrop-blur-md text-navText hover:text-navBg hover:bg-navText p-4 border rounded-md shadow-md">
                     <img
                     src={brand.brand_logo}
                     alt={brand.brand_name}
-                    className="h-24 mx-auto mb-3"
+                    className="h-fit mx-auto mb-3"
                     />
-                    <h2 className="text-lg font-bold">{brand.brand_name}</h2>
-                    <p className="text-sm text-gray-600">{brand.description}</p>
+                    <h2 className="text-center text-2xl font-bold">{brand.brand_name}</h2>
+                    <h2 className="text-center text-sm text-white font-semibold ">{brand.description}</h2>
                     <div className="flex items-center justify-between ">
                             <div id={brand._id} >
                             </div>

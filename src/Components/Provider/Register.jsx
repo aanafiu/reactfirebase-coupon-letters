@@ -155,7 +155,7 @@ const Register = () => {
                     </div>
                     <div>
                             <p 
-                                className={`font-semibold ${ passwordValid ? "text-green-500" : "text-red-500" }`}>
+                                className={`font-semibold ${ passwordValid ? "text-navText" : "text-red-500" }`}>
                                         { passwordMessage}
                             </p>
                     </div>

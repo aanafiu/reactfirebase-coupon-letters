@@ -9,7 +9,7 @@ export default {
       colors:{
         navBg:"#282A3A",
         naText: "#735F32",
-        navText: " #C69749"
+        navText: "#C69749"
       }
     },
   },

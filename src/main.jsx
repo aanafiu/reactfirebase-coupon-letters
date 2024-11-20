@@ -19,6 +19,7 @@ import Brands from './Components/Brands/Brands';
 import Home from './Components/Home/Home';
 import BrandDetails from './Components/Brands/BrandDetails';
 import { Toaster } from 'react-hot-toast';
+import MyProfile from './Components/Provider/MyProfile';
 
 
 const router = createBrowserRouter([
@@ -45,7 +46,11 @@ const router = createBrowserRouter([
         path:"brands/:id",
         element:<PrivateRoutes><BrandDetails></BrandDetails></PrivateRoutes> ,
         loader:()=>fetch("../brands.json")
-      }
+      },
+      {
+        path:"/myprofile",
+        element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>
+      },
      
     ]
 
@@ -73,10 +78,7 @@ const router = createBrowserRouter([
     ]
 
   },
-  {
-    path:"/my-profile",
-    element:<PrivateRoutes><div>this is profile</div></PrivateRoutes>
-  },
+
   {
     path:"/user",
     element:<UserLayout/>,

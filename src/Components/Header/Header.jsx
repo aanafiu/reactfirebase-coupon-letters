@@ -14,7 +14,7 @@ const Header = () => {
                 }
                 <Link to="/home" className="hover:bg-white p-2">Home</Link>
                 <Link to="/brands" className="hover:bg-white p-2">Brands</Link>
-                {user && <Link to="/my-profile" className="hover:bg-white p-2">My Profile</Link>}
+                {user && <Link to="/myprofile" className="hover:bg-white p-2">My Profile</Link>}
                 <Link to="/about" className="hover:bg-white p-2">About Dev</Link>
             </div>
 
