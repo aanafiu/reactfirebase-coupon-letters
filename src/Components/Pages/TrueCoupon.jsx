@@ -2,7 +2,8 @@
 const TrueCoupon = ({item}) => {
     const {brand_logo, brand_name,coupons,category} = item;
     return (
-        <div>
+        <div data-aos="fade-up"
+        data-aos-anchor-placement="center-bottom">
                 <div className=" flex gap-2 rounded-2xl items-center bg-navText text-navBg h-[200px] shadow-xl p-3">
                     <div className="h-full rounded-[50px]">
                         <img

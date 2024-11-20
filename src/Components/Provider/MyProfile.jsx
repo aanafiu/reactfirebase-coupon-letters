@@ -1,7 +1,11 @@
-import { useContext } from "react";
+import { useContext} from "react";
 import { UserContext } from "./userProvider";
 import { GrValidate } from "react-icons/gr";
 import { GoUnverified } from "react-icons/go";
+import { Link } from "react-router-dom";
+import { FaGithub } from "react-icons/fa";
+import { TiSocialFacebook,TiSocialLinkedin } from "react-icons/ti";
+
 
 const MyProfile = () => {
     const {user, updateDetails} = useContext(UserContext);
@@ -13,14 +17,10 @@ const MyProfile = () => {
         e.preventDefault();
         let name = e.target.name.value;
         let image = e.target.photo.value;
-        let emailU = e.target.email.value;
+
         if(name === "")
         {
             name = displayName;
-        }
-        if(emailU !== "")
-        {
-            emailU = email;
         }
         if(image === "")
         {
@@ -32,27 +32,42 @@ const MyProfile = () => {
 
 
     }
+
     return (
-        <div className="w-[90%] mx-auto my-10 bg-navText p-5 flex justify-between ">
-            <div className="w-fit mx-4 whitespace-nowrap border-r-2 pr-4">
-            <img src={photoURL} alt="" className="h-[200] w-[200px] rounded-full" />
-            <h1 className="text-2xl font-bold text-navBg">{displayName}</h1>
-            <h1 className="text-xl font-semibold text-white">Email: {email}</h1>
+        <div data-aos="fade-right" className="card w-[90%] mx-auto my-10 bg-navText p-5 flex justify-center items-center ">
+            <div className="w-fit flex items-center justify-start flex-col gap-6 mx-4 whitespace-nowrap pr-4">
+                <img src={photoURL} alt="" className="flex justify-center items-center h-[250px] w-[250px] rounded-full border-4 border-purple-500" />
+                <div className="grid grid-flow-col gap-4 text-4xl text-navBg">
+                            <h1 className="text-navBg font-bold">Social Link:</h1>
+                            <Link target="_blank" to="https://github.com/aanafiu" className="rounded-badge border-2 border-purple-500"><FaGithub /></Link>
+                            <Link target="_blank" to="https://www.linkedin.com/in/aanafiu/" className="rounded-badge border-2 border-purple-500"><TiSocialFacebook /></Link>
+                            <Link target="_blank" to="https://www.linkedin.com/in/aanafiu/" className="rounded-badge border-2 border-purple-500"><TiSocialLinkedin /></Link>
+                            
+                </div>
             </div>
-            <div className="items-start w-[50%] whitespace-nowrap mx-4 border-r-2 pr-4">
-                <h1 className="text-2xl font-bold text-navBg underline">My Profile</h1>
-                <h1 className="flex items-center gap-2 text-navBg text-xl font-bold">Verified: {emailVerified ? <span className="text-purple-500 text-2xl"><GrValidate /></span> : <span className="text-white text-2xl"><GoUnverified /></span> }</h1>
+            <div className="flex justify-start items-center w-full whitespace-nowrap mx-4 py-5">
+                <div className="w-full">
+
+                        <h1 className="text-2xl font-bold text-navBg underline bg-white rounded-r-badge border-l-4 border-b-4  border-purple-500 w-fit p-2 mb-2">My Profile</h1>
+                        <h1 className="text-2xl font-bold text-navBg border-l-4 border-purple-500 mb-2 p-2">{displayName}</h1>
+                        <h1 className="flex items-center gap-2 text-navBg text-xl font-bold border-l-4 border-purple-500 p-2">Verified: {emailVerified ? <span className="text-purple-500 text-2xl"><GrValidate /></span> : <span className="text-white text-2xl"><GoUnverified /></span> }</h1>
+                        <h1 className="text-2xl font-semibold text-white border-l-4 border-purple-500 my-3 p-2 w-fit ">Email: {email}</h1>
+
+
+
+                </div>
+
+                {/* Update */}
+                <div className="w-full ">
+                        <h1 className="text-2xl font-bold text-navBg underline bg-white rounded-r-badge w-fit p-2 border-l-4 border-b-4 border-purple-500">Update Profile</h1>
+                        <form onSubmit={handleUpdate} className="w-full flex flex-col gap-4 mt-2">
+                            <input type="text" placeholder="Name" name="name" className="p-2 rounded-lg bg-navBg text-navText text-lg font-semibold w-[80%]  outline-none focus:outline-purple-500" />
+                            <input type="text" placeholder="Give Real Photo URL" name="photo" className="p-2 rounded-lg bg-navBg text-navText text-lg font-semibold w-[80%] outline-none focus:outline-purple-500" />
+                            <button className="w-fit px-6 py-2 bg-navBg text-navText text-xl font-bold hover:text-purple-500 card">Update</button>
+                        </form>
+                    </div>
             </div>
 
-            <div className="w-full">
-            <h1 className="text-2xl font-bold text-navBg underline">Update Profile</h1>
-            <form onSubmit={handleUpdate} className="w-full flex flex-col gap-4 mt-2">
-                <input type="text" placeholder="Name" name="name" className="p-2 rounded-lg bg-navBg text-navText text-lg font-semibold w-[70%]" />
-                <input type="text" placeholder="Give Real Photo URL" name="photo" className="p-2 rounded-lg bg-navBg text-navText text-lg font-semibold w-[70%]" />
-                <input type="text" placeholder="Email" name="email" className="p-2 rounded-lg bg-navBg text-navText text-lg font-semibold w-[70%]" />
-                <button className="w-fit px-4 py-2 bg-navBg text-navText text-xl font-bold hover:text-purple-500">Save</button>
-            </form>
-            </div>
         </div>
     );
 };

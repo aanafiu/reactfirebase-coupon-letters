@@ -6,7 +6,7 @@ import CopyToClipboard from "react-copy-to-clipboard";
 import toast from "react-hot-toast";
 
 const BrandDetails = () => {
-  const { id } = useParams(); // Extract the `id` from the URL
+  const { id } = useParams(); 
   const data = useLoaderData()
   const [brand, setBrand] = useState([]);
   const [coupon, setCoupon] = useState([]);
@@ -14,14 +14,15 @@ const BrandDetails = () => {
   const [error, setError] = useState(null);
 
   useEffect(() => {
+    
         const selectedBrand = data.find((brand) => brand._id == parseInt(id))
+        setLoading(false);
         if (selectedBrand) {
           setBrand(selectedBrand);
           setCoupon(selectedBrand.coupons)
         } else {
           setError("Brand not found");
         }
-        setLoading(false);
       
   }, [loading,data,id]);
 
@@ -40,7 +41,7 @@ const BrandDetails = () => {
   })
 };
   return (
-    <div className="p-5 w-[80%] mx-auto my-5 bg-navText rounded-lg">
+    <div data-aos="fade-up" className="p-5 w-[80%] mx-auto my-5 bg-navText rounded-lg">
                 <h1 className="text-5xl font-bold text-center text-navBg my-4">{brand.brand_name}</h1>
         <div className="flex gap-5 justify-between items-center">
             <img src={brand.brand_logo} alt={brand.brand_name} className="w-full h-fit mx-auto rounded-xl" />

@@ -34,19 +34,19 @@ const Banner = () => {
   }, []);
 
   return (
-    <div className='w-full my-5'>
+    <div className='w-full my-5' >
       <div className="swiper w-full" ref={swiperRef}>
         <div className="swiper-wrapper w-full">
-          <div className="swiper-slide w-full">
+          <div className="swiper-slide w-full" data-aos="fade-top">
             <img src={image1} alt="Banner 1" />
           </div>
-          <div className="swiper-slide w-full">
+          <div className="swiper-slide w-full" data-aos="fade-top">
             <img src={image2} alt="Banner 2" />
           </div>
-          <div className="swiper-slide w-full">
+          <div className="swiper-slide w-full" data-aos="fade-top">
             <img src={image3} alt="Banner 3" />
           </div>
-          <div className="swiper-slide w-full">
+          <div className="swiper-slide w-full" data-aos="fade-top">
             <img src={image4} alt="Banner 4" />
           </div>
         </div>

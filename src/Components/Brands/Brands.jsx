@@ -8,7 +8,6 @@ const Brands = () => {
   const [search, setSearch] = useState("");
   const [processedBrands, setProcessedBrands] = useState(new Set()); 
 
-
   useEffect(() => {
     fetch("./brands.json")
       .then((res) => res.json())
@@ -90,7 +89,7 @@ const Brands = () => {
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
         {
             filteredBrands.map((brand) => (
-                <Link to={brand._id} key={brand._id} className="brand h-full bg-navBg backdrop-blur-md text-navText hover:text-navBg hover:bg-navText p-4 border rounded-md shadow-md">
+                <Link data-aos="zoom-in" to={brand._id} key={brand._id} className="brand h-full bg-navBg backdrop-blur-md text-navText hover:text-navBg hover:bg-navText p-4 border rounded-md shadow-md">
                     <img
                     src={brand.brand_logo}
                     alt={brand.brand_name}

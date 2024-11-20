@@ -20,7 +20,11 @@ import Home from './Components/Home/Home';
 import BrandDetails from './Components/Brands/BrandDetails';
 import { Toaster } from 'react-hot-toast';
 import MyProfile from './Components/Provider/MyProfile';
+import ForgetPassword from './Components/Provider/ForgetPassword';
 
+import AOS from 'aos';
+import 'aos/dist/aos.css'; 
+AOS.init();
 
 const router = createBrowserRouter([
   {
@@ -94,6 +98,10 @@ const router = createBrowserRouter([
       {
         path:"/user/register",
         element:<Register></Register>
+      },
+      {
+        path:"/user/resetpassword",
+        element:<ForgetPassword/>
       }
     ]
   }

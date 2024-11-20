@@ -19,7 +19,7 @@ const UserLayout = () => {
         <div className="bg-black w-full relative">
             <header className="backdrop-blur-xl text-navText sticky top-0 py-3 z-10"><Header></Header></header>
 
-            <section className="w-[90%] bg-navText rounded-[80px] mx-auto flex justify-center items-center my-3"><Outlet></Outlet></section>
+            <section data-aos="fade-up" className="w-[90%] bg-navText rounded-[80px] mx-auto flex justify-center items-center my-3"><Outlet></Outlet></section>
             <Footer></Footer>
             
         </div>

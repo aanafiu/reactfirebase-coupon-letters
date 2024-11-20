@@ -10,7 +10,8 @@ const Mainlayout = () => {
     return (
         <div className=" relative bg-black" >
             <header className=" text-navText sticky z-10 top-0 py-3 backdrop-blur-xl"><Header></Header></header>
-            <Outlet></Outlet>
+            <section data-aos="fade-down"> <Outlet></Outlet></section>
+           
             <Footer></Footer>
         </div>
     );

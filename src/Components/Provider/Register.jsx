@@ -46,11 +46,13 @@ const Register = () => {
         if (lengthValid && hasUppercase && hasLowercase) {
           setPasswordValid(true);
           setPasswordMessage("Password is strong");
+          return true;
         } else {
           setPasswordValid(false);
           setPasswordMessage(
             "Password must contain: A-Z, a-z, and length >= 6"
           );
+          return false;
         }
       };
     
@@ -60,7 +62,7 @@ const Register = () => {
       };
 
       
-    const { registerNewAccount, updateDetails, setLoading } = useContext(UserContext);
+    const { registerNewAccount, updateDetails, setLoading, loginGoogle } = useContext(UserContext);
 
 
     const handleRegister = (e)=>{
@@ -72,7 +74,7 @@ const Register = () => {
 
         // console.log(name, photo, email, password
 
-        if(passwordValid)
+        if(passwordValid || validatePassword(password))
             {
                 registerNewAccount(email,password)
                 .then(() => {
@@ -113,9 +115,16 @@ const Register = () => {
             }
     }
 
+    const handleGoogle = ()=>{
+      loginGoogle()
+      .then(()=>{
+          console.log("log in")
+      })
+  }
+
 
     return (
-        <div className=" flex p-4  gap-2 w-full min-h-[650px] h-[80vh] backdrop-blur-lg">
+        <div className=" flex p-4  gap-2 w-full h-[700px] backdrop-blur-lg">
                     
             <div className="bg-black card w-[50%] shrink-0 shadow-2xl py-3">
                 <h1 className="text-center text-3xl font-bold pt-5">Register New Account</h1>
@@ -124,19 +133,19 @@ const Register = () => {
                     <label className="label">
                         <span className="label-text  text-navText">Full Name</span>
                     </label>
-                    <input type="text" placeholder="Full Name" name="name" className="bg-navBg text-navText font-semibold input input-bordered" required />
+                    <input type="text" placeholder="Full Name" name="name" className="bg-navBg text-navText font-semibold input input-bordered outline-none focus:outline-purple-500" required />
                     </div>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text  text-navText">Photo URL</span>
                     </label>
-                    <input type="text" placeholder="Photo URL" name="photo" className="bg-navBg text-navText font-semibold input input-bordered" required />
+                    <input type="text" placeholder="Photo URL" name="photo" className="bg-navBg text-navText font-semibold input input-bordered outline-none focus:outline-purple-500" required />
                     </div>
                     <div className="form-control">
                     <label className="label">
                         <span className="label-text  text-navText">Email</span>
                     </label>
-                    <input type="email" placeholder="Email" name="email" className="bg-navBg text-navText font-semibold input input-bordered" required />
+                    <input type="email" placeholder="Email" name="email" className="bg-navBg text-navText font-semibold input input-bordered outline-none focus:outline-purple-500" required />
                     </div>
                     <div className="form-control">
 
@@ -151,7 +160,7 @@ const Register = () => {
                             </div>
                         </div>
 
-                    <input type={eyeBtn ?"text" : "password"} placeholder="Password" name="password" className="bg-navBg text-navText font-semibold input input-bordered" required onKeyUp={handlePasswordChange}/>
+                    <input type={eyeBtn ?"text" : "password"} placeholder="Password" name="password" className="bg-navBg text-navText font-semibold input input-bordered outline-none focus:outline-purple-500" required onKeyUp={handlePasswordChange}/>
                     </div>
                     <div>
                             <p 
@@ -163,6 +172,11 @@ const Register = () => {
                     <button className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500">Register</button>
                     </div>
                     <p className="text-center mt-2">Already Have An Account. <Link to="/user/login" className="font-bold text-purple-500">Login</Link></p>
+                    <p className="text-center">or</p>
+                     {/* Google login */}
+                    <div className="form-control mt-2">
+                        <button type="button" className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500 rounded-lg" onClick={handleGoogle}>Sign In With Google</button>
+                    </div>
                 </form>
             </div>
 

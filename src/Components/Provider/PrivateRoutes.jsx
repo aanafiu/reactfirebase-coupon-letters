@@ -6,7 +6,8 @@ import Loading from "./Loading";
 const PrivateRoutes = ({children}) => {
 
 const {user, loading} = useContext(UserContext);
-
+const location = useLocation();
+console.log(location);
     if(loading)
     {
         return <Loading></Loading>
@@ -17,7 +18,7 @@ const {user, loading} = useContext(UserContext);
         return children;
     }
 
-    return <Navigate to={"/user/login"}></Navigate>
+    return <Navigate state={location.pathname} to={"/user/login"}></Navigate>
 };
 
 export default PrivateRoutes;
