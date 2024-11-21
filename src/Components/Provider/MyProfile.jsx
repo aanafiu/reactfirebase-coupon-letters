@@ -37,15 +37,15 @@ const MyProfile = () => {
         <div data-aos="fade-right" className="card w-[90%] mx-auto my-10 bg-navText p-5 flex justify-center items-center ">
             <div className="w-fit flex items-center justify-start flex-col gap-6 mx-4 whitespace-nowrap pr-4">
                 <img src={photoURL} alt="" className="flex justify-center items-center h-[250px] w-[250px] rounded-full border-4 border-purple-500" />
-                <div className="grid grid-flow-col gap-4 text-4xl text-navBg">
-                            <h1 className="text-navBg font-bold">Social Link:</h1>
+                <div className="grid grid-flow-row justify-items-center md:grid-flow-col gap-4 text-4xl text-navBg">
+                            <h1 className="text-navBg font-bold ">Social Link:</h1>
                             <Link target="_blank" to="https://github.com/aanafiu" className="rounded-badge border-2 border-purple-500 hover:text-navText hover:bg-purple-500"><FaGithub /></Link>
                             <Link target="_blank" to="https://www.linkedin.com/in/aanafiu/" className="rounded-badge border-2 border-purple-500 hover:text-navText hover:bg-purple-500"><TiSocialFacebook /></Link>
                             <Link target="_blank" to="https://www.linkedin.com/in/aanafiu/" className="rounded-badge border-2 border-purple-500 hover:text-navText hover:bg-purple-500"><TiSocialLinkedin /></Link>
                             
                 </div>
             </div>
-            <div className="flex justify-start items-center w-full whitespace-nowrap mx-4 py-5">
+            <div className="flex flex-col md:flex-row justify-start items-center w-full whitespace-nowrap mx-4 py-5">
                 <div className="w-full">
 
                         <h1 className="text-2xl font-bold underline btn-grads text-navText rounded-r-badge border-l-4 border-b-4  border-purple-500 w-fit p-2 mb-2">My Profile</h1>
@@ -57,6 +57,9 @@ const MyProfile = () => {
 
                 </div>
 
+                <div className="h-[5px] w-full bg-navBg mb-2 md:hidden">
+                    
+                </div>
                 {/* Update */}
                 <div className="w-full ">
                         <h1 className="text-2xl font-bold btn-grads text-navText underline  rounded-r-badge w-fit p-2 border-l-4 border-b-4 border-purple-500">Update Profile</h1>

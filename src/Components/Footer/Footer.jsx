@@ -13,7 +13,7 @@ const Footer = () => {
                         Discover the Best Coupons, Delivered Daily.
                     </p>
                 </aside>
-                <nav className="w-full flex justify-between">
+                <nav className="w-full flex flex-col md:flex-row justify-between">
                     <p className="text-lg">Copyright © {new Date().getFullYear()} - All right reserved By Nafiu</p>
                     <div className="grid grid-flow-col gap-4 text-3xl">
                         <Link target="_blank" to="https://github.com/aanafiu" className="rounded-badge border-2 border-purple-500 hover:text-navText hover:bg-purple-500"><FaGithub /></Link>

@@ -105,9 +105,9 @@ const Login = () => {
         setEmail(email);
     }
     return (
-        <div className=" flex p-4  gap-2 w-full h-[600px] backdrop-blur-lg">
+        <div className="flex flex-col md:flex-row p-4  gap-2 w-full h-full md:h-[600px] backdrop-blur-lg">
                     
-        <div className="card bg-black h-full w-[50%] shadow-2xl py-3 flex justify-self-start">
+        <div className="card bg-black h-full w-[100%] shadow-2xl py-3 flex justify-self-start">
             <h1 className="text-center text-3xl font-bold pt-5">Login Your Account</h1>
             <form onSubmit={handleLogin} className="card-body mb-0 pb-0 gap-2 justify-between h-full">
                 
@@ -152,7 +152,7 @@ const Login = () => {
 
         </div>
 
-        <div className="w-[50%] h-[100%]">
+        <div className="w-[100%] h-[100%]">
             <img src={loginimage} className="w-full h-full object-fill rounded-2xl" alt="" />
         </div>
     </div>
