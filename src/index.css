@@ -87,3 +87,8 @@ h1,p{
  .manrope {
    font-family: "Manrope", serif;
  }
+
+ .border-g{
+  background: rgb(214,43,247);
+  background: linear-gradient(180deg, rgba(214,43,247,1) 31%, rgba(255,188,77,1) 100%); 
+ }

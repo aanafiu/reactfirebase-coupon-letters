@@ -25,6 +25,7 @@ import ForgetPassword from './Components/Provider/ForgetPassword';
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import ErrorPage from './Components/ErrorPage';
+import Abouts from './Components/Pages/Abouts';
 AOS.init();
 
 const router = createBrowserRouter([
@@ -57,6 +58,10 @@ const router = createBrowserRouter([
         path:"/myprofile",
         element:<PrivateRoutes><MyProfile></MyProfile></PrivateRoutes>
       },
+      {
+        path: "/about",
+        element: <Abouts></Abouts>
+      }
      
     ]
 
@@ -73,6 +78,10 @@ const router = createBrowserRouter([
             path:"/home/",
             element:<BrandOnSale></BrandOnSale>,
             loader:()=>fetch("../brands.json")
+          },
+          {
+            path: "/home/about",
+            element: <Abouts></Abouts>
           }
         ]
      },

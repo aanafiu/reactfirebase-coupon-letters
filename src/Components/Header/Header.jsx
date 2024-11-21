@@ -17,17 +17,13 @@ const Header = () => {
   return (
     <div className="w-[95%] mx-auto py-4 flex items-center justify-between relative">
       {/* Logo */}
-      <Link to="/" className="w-[40%] mr-10">
+      <Link to="/" className="w-[80%]">
         <img src={logo} alt="Logo" className="h-[80px] w-fit" />
       </Link>
 
       {/* Desktop Navigation */}
-      <div className="hidden lg:flex w-full justify-center items-center gap-4 font-semibold">
-        {user && (
-          <Link to="/myprofile" className="p-2 btn-grad whitespace-normal">
-            Welcome, <span className="text-purple-500 text-lg font-bold">{name}</span>
-          </Link>
-        )}
+      <div className="hidden lg:flex w-full justify-center items-center gap-4 font-semibold px-10">
+       
         <Link to="/home" className="btn-grad text-navText p-2">
           Home
         </Link>
@@ -45,18 +41,23 @@ const Header = () => {
       </div>
 
        {/* Hamburger Menu (Mobile) */}
-       <div className="lg:hidden w-[80%] flex items-center justify-end">
+       <div className="lg:hidden w-[80%] flex items-center justify-end px-10">
         <button onClick={toggleMenu} className="text-3xl focus:outline-none">
           {menuOpen ? <FaTimes /> : <FaBars />}
         </button>
       </div>
 
       {/* User Profile or Login/Registration */}
-      <div className="hidden md:flex w-[60%] justify-end">
+      <div className="hidden gap-6 md:flex w-[100%] justify-end">
+         {user && (
+          <Link to="/myprofile" className="p-2 btn-grad whitespace-normal flex flex-col items-center justify-center">
+            Welcome, <span className="text-purple-500 text-lg font-bold">{name}</span>
+          </Link>
+        )}
         {user ? (
           <div
             onClick={signOutUser}
-            className="btn-grad w-fit flex gap-3 border-2 border-purple-500 p-3 rounded-badge hover:border-navText hover:text-purple-500 hover:bg-white cursor-pointer"
+            className="btn-grad w-[250px] flex justify-center items-center gap-3 border-2 border-purple-500 p-3 rounded-badge hover:border-navText hover:text-purple-500 hover:bg-white cursor-pointer"
           >
             <div className="whitespace-nowrap">
               <img className="w-[50px] h-[50px] rounded-badge" src={user?.photoURL} alt="" />
@@ -82,7 +83,7 @@ const Header = () => {
 
       {/* Mobile Navigation */}
       {menuOpen && (
-        <div className="absolute top-full right-0 w-[80%] bg-navBg flex flex-col items-start gap-4 p-5 rounded-badge shadow-lg lg:hidden">
+        <div className="absolute w-full top-full right-0 w-[80%] bg-navBg flex flex-col items-start gap-4 p-5 rounded-badge shadow-lg lg:hidden">
           {user && (
             <Link
               to="/myprofile"
@@ -122,7 +123,7 @@ const Header = () => {
           {user ? (
             <div
             onClick={signOutUser}
-            className="btn-grad w-fit flex md:hidden gap-3 border-2 border-purple-500 p-3 rounded-badge hover:border-navText hover:text-purple-500 hover:bg-white cursor-pointer"
+            className="btn-grad w-full justify-center items-center flex md:hidden gap-3 border-2 border-purple-500 p-3 rounded-badge hover:border-navText hover:text-purple-500 hover:bg-white cursor-pointer"
           >
             <div>
               <img className="w-[50px] h-[50px] rounded-badge" src={user?.photoURL} alt="" />
