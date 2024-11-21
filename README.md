@@ -1,8 +1,38 @@
-# React + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Coupon Letters
 
-Currently, two official plugins are available:
+This is a website of coupons where customer can get huge collection of coupons from reknown brands. Collect And Use.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+
+# 🔗 Links
+## Netlify Live Link: [Project Link 1](https://reactfirebase-coupon-letters.netlify.app/)
+## Firebase Live Link: [Project Link 2](https://reactfirebase-coupon-letters.web.app/)
+## Document Link: [Requirements](https://drive.google.com/file/d/1WhtJx1HdTLrkaateDEqOVavMjA2oW6u5/view?usp=sharing)
+
+
+# Features
+
+- Single Page Website
+- React Router Dom
+- Login/SignUp with Google Or Email
+- Lots Of Animation & Nofication Styles
+- Private Routes
+- Update User Data
+
+# Used React Packages Name
+
+- React Router Dom For Dom Manipulate
+- SweetAlert For Notifications 
+- AOS & Animated Css for Animation
+- FireBase For Authentication
+- React Fast Marquee
+- React Icons
+
+
+
+
+
+## Feedback
+
+If you have any feedback, please reach out to us at [linkedin](https://www.linkedin.com/in/aanafiu/)
+
