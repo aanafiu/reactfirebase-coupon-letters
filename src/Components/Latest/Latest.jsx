@@ -10,12 +10,12 @@ const Latest = () => {
             .then((data) => setBrands(data));
     }, []);
     return (
-        <div className="skeleton bg-[#735F32] flex rounded-lg p-6  text-xl font-semibold"  >
+        <div className="skeleton flex rounded-lg p-6  text-xl font-semibold"  >
             <Marquee  speed={150} pauseOnHover={true}>
                 {brands.map((e) => (
-                    <Link data-aos="flip-down" to={`brands/${e._id}`} data-aos-duration="1000" key={e._id} className="flex flex-col justify-center items-center " >
+                    <Link data-aos="flip-down" to={`brands/${e._id}`} data-aos-duration="1000" key={e._id} className="flex flex-col justify-center items-center" >
                         <img src={e.brand_logo} alt="" className="mx-8 w-[120px] h-[100px]" />
-                        <h1>{e.brand_name}</h1>
+                        <h1 className="text-lg">{e.brand_name}</h1>
                     </Link>
                 ))}
             </Marquee>

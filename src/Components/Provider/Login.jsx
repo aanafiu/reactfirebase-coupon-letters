@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+import { Link, Navigate, useLocation, useNavigate } from "react-router-dom";
 import { ImEye,ImEyeBlocked } from "react-icons/im";
 import loginimage from "../../assets/loginimg.jpeg"
 import { UserContext } from "./userProvider";
@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 
 const Login = () => {
     const navigate = useNavigate();
-    const {loginUser, setLoading, loading, loginGoogle} = useContext(UserContext)
+    const {loginUser, setLoading, loading, loginGoogle, setEmail} = useContext(UserContext)
     const [eyeBtn, setEyeBtn] = useState(false);
     const handleEye = ()=>{
         setEyeBtn(!eyeBtn);
@@ -97,6 +97,13 @@ const Login = () => {
         navigate(location.state ? `${location.state}` : "/")
 
     }
+
+
+    // PassValue
+    const passLoginData = ()=>{
+        const email = document.getElementById("email").value;
+        setEmail(email);
+    }
     return (
         <div className=" flex p-4  gap-2 w-full h-[600px] backdrop-blur-lg">
                     
@@ -108,7 +115,7 @@ const Login = () => {
                     <label className="label ">
                         <span className="label-text text-navText">Email</span>
                     </label>
-                    <input type="email" placeholder="Email" name="email" className="bg-navBg text-navText font-semibold input input-bordered outline-none focus:outline-purple-500" required />
+                    <input id="email" type="email" placeholder="Email" name="email" className="bg-navBg text-navText font-semibold input input-bordered outline-none focus:outline-purple-500" required />
                 </div>
                 <div className="form-control">
 
@@ -127,18 +134,18 @@ const Login = () => {
                 </div>
 
                 <label>
-                <Link to="/user/resetpassword" className="text-navText hover:text-purple-500">Forgot password?</Link>
+                <Link onClick={passLoginData} to="/user/resetpassword" className="text-navText hover:text-purple-500">Forgot password?</Link>
                 </label>
 
                 <div className="form-control mt-2">
-                <button className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500">Login</button>
+                <button className="btn-grad text-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500">Login</button>
                 </div>
-                <p className="text-center mt-2">New User? Create New Account <Link to="/user/register" className="font-bold text-purple-500 ">Register</Link></p>
+                <p className="text-center mt-2">New User? Create New Account <Link to="/user/register" state={location.state} className="font-bold text-purple-500 ">Register</Link></p>
                 <p className="text-center">or</p>
 
                 {/* Google login */}
             <div className="form-control mt-2">
-                <button type="button" className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500 rounded-lg" onClick={handleGoogle}>Sign In With Google</button>
+                <button type="button" className="btn-grad text-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500 rounded-lg" onClick={handleGoogle}>Sign In With Google</button>
             </div>
             </form>
 

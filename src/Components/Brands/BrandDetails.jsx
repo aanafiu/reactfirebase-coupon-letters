@@ -1,9 +1,10 @@
-import { useLoaderData, useParams } from "react-router-dom";
+import { Link, useLoaderData, useParams } from "react-router-dom";
 import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../Provider/userProvider";
 import ReactStars from "react-rating-stars-component";
 import CopyToClipboard from "react-copy-to-clipboard";
 import toast from "react-hot-toast";
+import 'animate.css';
 
 const BrandDetails = () => {
   const { id } = useParams(); 
@@ -42,7 +43,7 @@ const BrandDetails = () => {
 };
   return (
     <div data-aos="fade-up" className="p-5 w-[80%] mx-auto my-5 bg-navText rounded-lg">
-                <h1 className="text-5xl font-bold text-center text-navBg my-4">{brand.brand_name}</h1>
+                <h1 className="text-5xl font-bold text-center text-navBg my-4 underline">{brand.brand_name}</h1>
         <div className="flex gap-5 justify-between items-center">
             <img src={brand.brand_logo} alt={brand.brand_name} className="w-full h-fit mx-auto rounded-xl" />
             <div className="w-full flex flex-col items-start">
@@ -69,15 +70,16 @@ const BrandDetails = () => {
                         {
                             coupon.map((e,index)=>(
                             <div key={index} className="bg-white rounded-lg h-fit p-4 w-full flex flex-col gap-2">
-                               <h1 className="text-xl font-extrabold">Coupon Code: {e.coupon_code}</h1>
+                               <h1 className="text-xl font-extrabold animate__animated animate__bounce">Coupon Code: {e.coupon_code}</h1>
                                <h1 className="text-lg font-semibold">{e.description}</h1>
                                <h1 className="text-lg font-semibold">Expire Date: {e.expiry_date}</h1>
                                <CopyToClipboard onCopy={notify} text={e.coupon_code} >
-                                    <button  type="button" className="bg-navText text-white font-bold text-lg py-2 px-4 rounded">
+                                    <button  type="button" className="btn-grad text-navText font-bold text-lg py-2 px-4 rounded hover:animate-pulse hover:bg-navBg">
                                     Copy to Clipboard
                                     </button>
 
                                 </CopyToClipboard>
+                                <Link to="/brands" className="btn-grad text-navText  font-bold text-lg py-2 px-4 rounded text-center hover:animate-pulse hover:bg-navBg">Use Now</Link>
                                 </div>)
                             )
 

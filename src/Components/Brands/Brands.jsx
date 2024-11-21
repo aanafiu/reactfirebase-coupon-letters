@@ -105,7 +105,7 @@ const Brands = () => {
                                             e.stopPropagation(); 
                                             saleIsOn(brand); 
                                         }}
-                                className="btn font-bold text-xl text-purple-500 hover:bg-purple-500 hover:text-white mt-2 block"
+                                className="btn font-bold btn-grads text-navText hover:text-purple-500 mt-2 block"
                                 >
                                 View Coupon
                                 </button>

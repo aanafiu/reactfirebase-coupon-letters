@@ -9,6 +9,8 @@ const UserProvider = ({children}) => {
     const [loading, setLoading] = useState(true)
     const [user, setUser] = useState(null);
 
+    const[email, setEmail] = useState(null);
+
     const registerNewAccount =(email, password)=>{
         setLoading(true)
         return createUserWithEmailAndPassword(auth, email, password)
@@ -73,7 +75,9 @@ const UserProvider = ({children}) => {
         loading,
         setLoading,
         resetPassword,
-        loginGoogle
+        loginGoogle,
+        setEmail,
+        email
 
     }
 

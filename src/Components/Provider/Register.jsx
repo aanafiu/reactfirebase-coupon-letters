@@ -1,5 +1,5 @@
 import { useContext, useState } from "react";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImEye,ImEyeBlocked } from "react-icons/im";
 import regImage from "../../assets/regimage2.jpeg"
 import { UserContext } from "./userProvider";
@@ -64,7 +64,8 @@ const Register = () => {
       
     const { registerNewAccount, updateDetails, setLoading, loginGoogle } = useContext(UserContext);
 
-
+const location = useLocation()
+console.log(location);
     const handleRegister = (e)=>{
         e.preventDefault();
         const name = e.target.name.value;
@@ -85,12 +86,13 @@ const Register = () => {
                             title: `Welcome ${name}`,
                             text: "You Have Successfully Created An Account ",
                             icon: "success",
-                            confirmButtonText: "Go to Home ",
+                            confirmButtonText: "Continue ",
                             allowOutsideClick: false, 
                           }).then((result) => {
                             if (result.isConfirmed) {
                               // Navigate when "OK" is clicked
-                              navigate("/");
+                              navigate(location.state ? `${location.state}` : "/")
+                              setLoading(false); 
                             }
                           });
                         });
@@ -115,16 +117,40 @@ const Register = () => {
             }
     }
 
-    const handleGoogle = ()=>{
+    const handleGoogle = (e)=>{
+      console.log("F",location)
+      e.preventDefault();
       loginGoogle()
       .then(()=>{
-          console.log("log in")
+          const Toast = Swal.mixin({
+              toast: true,
+              position: "top-end",
+              showConfirmButton: false,
+              timer: 1000,
+              timerProgressBar: true,
+              didOpen: (toast) => {
+                  toast.onmouseenter = Swal.stopTimer;
+                  toast.onmouseleave = Swal.resumeTimer;
+              }
+          });
+          Toast.fire({
+              icon: "success",
+              title: "Signed in successfully",   
+          })
+          
       })
+      .catch((error)=>{
+          setLoading(false); 
+          errorNotification();
+          
+      })
+      setLoading(true); 
+      navigate(location.state ? `${location.state}` : "/")
   }
 
 
     return (
-        <div className=" flex p-4  gap-2 w-full h-[700px] backdrop-blur-lg">
+        <div className=" flex p-4  gap-2 w-full h-[750px] backdrop-blur-lg">
                     
             <div className="bg-black card w-[50%] shrink-0 shadow-2xl py-3">
                 <h1 className="text-center text-3xl font-bold pt-5">Register New Account</h1>
@@ -169,13 +195,13 @@ const Register = () => {
                             </p>
                     </div>
                     <div className="form-control mt-2">
-                    <button className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500">Register</button>
+                    <button className="btn-grad text-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500">Register</button>
                     </div>
-                    <p className="text-center mt-2">Already Have An Account. <Link to="/user/login" className="font-bold text-purple-500">Login</Link></p>
+                    <p className="text-center mt-2">Already Have An Account. <Link state={location.state} to="/user/login" className="font-bold text-purple-500">Login</Link></p>
                     <p className="text-center">or</p>
                      {/* Google login */}
                     <div className="form-control mt-2">
-                        <button type="button" className="btn btn-ghost bg-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500 rounded-lg" onClick={handleGoogle}>Sign In With Google</button>
+                        <button type="button" className="btn-grad text-navText text-2xl font-bold hover:text-purple-500 hover:border-purple-500 rounded-lg" onClick={handleGoogle}>Sign In With Google</button>
                     </div>
                 </form>
             </div>

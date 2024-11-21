@@ -56,3 +56,34 @@
 h1,p{
   color: #C69749;
 }
+
+
+.btn-grads {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
+.btn-grad {background-image: linear-gradient(to right, #232526 0%, #414345  51%, #232526  100%)}
+.btn-grad {
+  font-size: 14px;
+   margin: 4px 0;
+   padding: 10px 20px;
+   text-align: center;
+   text-transform: uppercase;
+   transition: 0.5s;
+   background-size: 200% auto;          
+   box-shadow: 0 0 10px #eee;
+   border-radius: 10px;
+ }
+
+ .btn-grad:hover {
+   background-position: right center; 
+   color: #925dfc !important;
+   text-decoration: none;
+ }
+ .btn-grad:hover span {
+   background-position: right center; 
+   color: #C69749 !important;
+   text-decoration: none;
+ }
+
+
+ .manrope {
+   font-family: "Manrope", serif;
+ }

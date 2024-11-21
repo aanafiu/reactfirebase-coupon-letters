@@ -24,12 +24,14 @@ import ForgetPassword from './Components/Provider/ForgetPassword';
 
 import AOS from 'aos';
 import 'aos/dist/aos.css'; 
+import ErrorPage from './Components/ErrorPage';
 AOS.init();
 
 const router = createBrowserRouter([
   {
     path:"",
     element:<Mainlayout></Mainlayout>,
+    errorElement: <ErrorPage></ErrorPage>,
     children:[
       {
         path:"",
