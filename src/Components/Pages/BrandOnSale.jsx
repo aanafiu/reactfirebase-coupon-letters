@@ -6,9 +6,9 @@ const BrandOnSale = () => {
     const data = useLoaderData();
     // console.log("i am brand on sale")
     return (
-        <div className='w-[90%] p-5 bg-[#282A3A] mx-auto my-10'>
+        <div className='w-[90%] p-5 btn-grads mx-auto my-10 rounded-lg'>
             <h1 className='text-center text-4xl text-navText font-bold mb-5 underline'>Brand On Sale</h1>
-            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 '>
+            <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 '>
                 {
                     data.map((item)=> (item.isSaleOn ?<TrueCoupon key={item._id} item={item} ></TrueCoupon> : ""))
                 }

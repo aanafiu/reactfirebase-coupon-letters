@@ -6,6 +6,7 @@ import * as ReactDOM from "react-dom/client";
 import {
   createBrowserRouter,
   RouterProvider,
+  ScrollRestoration,
   useParams,
 } from "react-router-dom";
 import Mainlayout from './Layout/Mainlayout';
@@ -26,6 +27,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'; 
 import ErrorPage from './Components/ErrorPage';
 import Abouts from './Components/Pages/Abouts';
+import ContactUS from './Components/Home/ContactUS';
 AOS.init();
 
 const router = createBrowserRouter([

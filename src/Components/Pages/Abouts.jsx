@@ -5,7 +5,7 @@ import { FaGithub } from "react-icons/fa";
 
 const Abouts = () => {
     return (
-        <div className="w-[90%] mx-auto">
+        <div className="w-[90%] mx-auto py-10">
             <div className="grid grid-cols-1 md:grid-cols-2  gap-5 ">
                 <div className="btn-grads card w-full justify-items-center h-full bg-slate-900 border-2 border-purple-500 p-4 ">
                     <div className="flex justify-center items-center h-full ">

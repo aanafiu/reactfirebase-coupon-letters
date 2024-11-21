@@ -50,7 +50,7 @@ const Header = () => {
       {/* User Profile or Login/Registration */}
       <div className="hidden gap-6 md:flex w-[100%] justify-end">
          {user && (
-          <Link to="/myprofile" className="p-2 btn-grad whitespace-normal flex flex-col items-center justify-center">
+          <Link to="/myprofile" className="btn-grad w-fit gap-3 border-2 border-purple-500 p-3 rounded-badge hover:border-navText hover:text-purple-500 hover:bg-white cursor-pointer btn-grad whitespace-normal flex flex-col items-center justify-center">
             Welcome, <span className="text-purple-500 text-lg font-bold">{name}</span>
           </Link>
         )}

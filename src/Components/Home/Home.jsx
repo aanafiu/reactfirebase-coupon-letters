@@ -1,7 +1,10 @@
 
 import Banner from '../Header/Banner';
 import Latest from '../Latest/Latest';
-import { Outlet } from 'react-router-dom';
+import { Outlet, ScrollRestoration } from 'react-router-dom';
+import ContactUS from './ContactUS';
+import Abouts from '../Pages/Abouts';
+import AboutUs from './AboutUs';
 
 const Home = () => {
     return (
@@ -9,7 +12,9 @@ const Home = () => {
                         <Banner></Banner>
                         <Latest></Latest>
                         <Outlet></Outlet>
-        </div>
+                        <AboutUs></AboutUs>
+                        <ContactUS></ContactUS>
+        </div>  
     );
 };
 

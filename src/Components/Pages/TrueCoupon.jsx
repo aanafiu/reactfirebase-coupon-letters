@@ -4,7 +4,7 @@ const TrueCoupon = ({item}) => {
     return (
         <div data-aos="fade-up"
      data-aos-anchor-placement="center-bottom">
-                <div className=" flex gap-2 rounded-2xl items-center btn-grads text-navText h-[200px] shadow-xl p-3">
+                <div className=" flex gap-2 rounded-2xl items-center border-2 border-purple-500 backdrop-blur bg-white bg-transparent text-navText h-[200px] shadow-xl p-3">
                     <div className="h-full rounded-[50px]">
                         <img
                         src={brand_logo}
