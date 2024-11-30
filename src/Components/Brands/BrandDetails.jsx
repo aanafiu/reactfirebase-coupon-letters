@@ -16,7 +16,7 @@ const BrandDetails = () => {
 
   useEffect(() => {
     
-        const selectedBrand = data.find((brand) => brand._id == parseInt(id))
+        const selectedBrand = data.find((brand) => brand._id === id)
         setLoading(false);
         if (selectedBrand) {
           setBrand(selectedBrand);
@@ -45,8 +45,8 @@ const BrandDetails = () => {
     <div data-aos="fade-up" className="p-5 w-[80%] mx-auto my-5 bg-navText rounded-lg">
                 <h1 className="text-5xl font-bold text-center text-navBg my-4 underline">{brand.brand_name}</h1>
         <div className="flex gap-5 justify-between items-center">
-            <img src={brand.brand_logo} alt={brand.brand_name} className="w-full h-fit mx-auto rounded-xl" />
-            <div className="w-full flex flex-col items-start">
+            <img src={brand.brand_logo} alt={brand.brand_name} className="w-[100%] h-fit mx-auto rounded-xl" />
+            <div className="w-[100%] flex flex-col items-start">
                     <div className="w-full flex items-center justify-between">
                         <h1 className="text-xl font-bold text-navBg">Rating</h1>
                         {brand.rating !== undefined && (

@@ -1,7 +1,7 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { ImEye,ImEyeBlocked } from "react-icons/im";
-import regImage from "../../assets/regimage2.jpeg"
+import regimage2 from "../../assets/regimage2.jpeg"
 import { UserContext } from "./userProvider";
 import Swal from 'sweetalert2'
 
@@ -152,7 +152,7 @@ console.log(location);
     return (
         <div className="flex flex-col md:flex-row p-4  gap-2 w-full h-full md:h-[750px] backdrop-blur-lg">
                     
-            <div className="bg-black card w-[100%] shrink-0 shadow-2xl py-3">
+            <div className="bg-black card w-[100%] shadow-2xl py-3">
                 <h1 className="text-center text-3xl font-bold pt-5">Register New Account</h1>
                 <form onSubmit={handleRegister} className="card-body p-3 gap-2 justify-between h-full">
                     <div className="form-control">
@@ -207,7 +207,7 @@ console.log(location);
             </div>
 
             <div className="w-[100%] h-full">
-                <img src={regImage} className="w-full h-full object-fill rounded-2xl" alt="" />
+                <img src={regimage2} className="w-full h-full object-fill rounded-2xl" alt="" />
             </div>
         </div>
     );

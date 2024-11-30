@@ -59,7 +59,7 @@ const Brands = () => {
   };
   return (
     <div className=" backdrop-blur-md w-[90%] mx-auto p-5">
-      <div className=" flex justify-between items-center mb-4 z-10">
+      <div className=" flex flex-col md:flex-row gap-4 justify-between items-center mb-4 z-10">
         <h1 className="text-4xl font-bold">Brands</h1>
         <div>
           <label className="input input-bordered flex items-center gap-2 bg-navText text-black font-semibold">
@@ -93,7 +93,7 @@ const Brands = () => {
                     <img
                     src={brand.brand_logo}
                     alt={brand.brand_name}
-                    className="h-fit mx-auto mb-3"
+                    className="h-[250px] md:h-[350px] w-full mx-auto mb-3"
                     />
                     <h2 className="text-center text-2xl font-bold">{brand.brand_name}</h2>
                     <h2 className="text-center text-sm text-white font-semibold ">{brand.description}</h2>

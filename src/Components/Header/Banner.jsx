@@ -1,10 +1,10 @@
-import { useEffect, useRef } from 'react';
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+import { useEffect, useRef } from "react";
+import Swiper from "swiper";
+import { Navigation, Pagination } from "swiper/modules";
 // Import Swiper styles
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
 
 import image1 from "../../assets/banner.png";
 import image2 from "../../assets/banner2.png";
@@ -19,22 +19,22 @@ const Banner = () => {
       // Initialize Swiper
       new Swiper(swiperRef.current, {
         modules: [Navigation, Pagination],
-        direction: 'horizontal', // Change to 'vertical' if needed
+        direction: "horizontal", // Change to 'vertical' if needed
         loop: true,
         pagination: {
-          el: '.swiper-pagination',
+          el: ".swiper-pagination",
           clickable: true,
         },
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
         },
       });
     }
   }, []);
 
   return (
-    <div className='w-full my-5' >
+    <div className="w-full my-5">
       <div className="swiper w-full" ref={swiperRef}>
         <div className="swiper-wrapper w-full">
           <div className="swiper-slide w-full" data-aos="fade-top">
@@ -59,7 +59,6 @@ const Banner = () => {
         <div className="swiper-button-next w-full"></div>
       </div>
     </div>
-
   );
 };
 
